@@ -27,8 +27,6 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
 
     public static final String KEY_INTENT_CALL_DATA = "key_intent_call_data";
 
-    public static final String agoraId = "";
-
     private TextView tvHangUp;
 
     protected RtcEngine mRtcEngine;
@@ -85,7 +83,7 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
 
     private void initializeAgoraEngine() {
         try {
-            mRtcEngine = RtcEngine.create(this, agoraId, mRtcEventHandler);
+            mRtcEngine = RtcEngine.create(this, getString(R.string.agora_app_id), mRtcEventHandler);
         } catch (Exception e) {
             throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
         }
@@ -98,7 +96,7 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
         if (mRtcEngine != null && callDataBean != null) {
             if (RxPermissions.getInstance(this).isGranted(android.Manifest.permission.RECORD_AUDIO)) {
                 // if you do not specify the uid, we will generate the uid for you
-                mRtcEngine.joinChannel(null, callDataBean.getRoomId(), "Extra Optional Data", 0);
+                mRtcEngine.joinChannel(getString(R.string.agora_access_token), callDataBean.getRoomId(), "Extra Optional Data", 0);
             } else {
                 RxPermissions.getInstance(this).request(android.Manifest.permission.RECORD_AUDIO)
                         .subscribe(new Action1<Boolean>() {
