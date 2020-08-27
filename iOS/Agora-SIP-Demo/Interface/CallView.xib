@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CallView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xP7-rK-zj4">
+                    <rect key="frame" x="60" y="762" width="294" height="40"/>
+                    <color key="backgroundColor" red="0.82352941176470584" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="7WW-ha-UcJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Hang up" image="hangup">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-Es-7b8">
+                    <rect key="frame" x="163" y="164" width="88" height="38.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWx-6f-yZy">
+                    <rect key="frame" x="60" y="282.5" width="294" height="399.5"/>
+                    <color key="backgroundColor" red="0.1058823529" green="0.14117647059999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAT-sq-F9U">
+                    <rect key="frame" x="236.5" y="282.5" width="117.5" height="160"/>
+                    <color key="backgroundColor" red="0.1058823529" green="0.14117647059999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.10588235294117647" green="0.14117647058823529" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ZWx-6f-yZy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="CfF-1Z-V3z"/>
+                <constraint firstItem="RAT-sq-F9U" firstAttribute="trailing" secondItem="ZWx-6f-yZy" secondAttribute="trailing" id="KAM-k7-yvm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xP7-rK-zj4" secondAttribute="bottom" constant="60" id="Kaz-VE-E6m"/>
+                <constraint firstItem="k3N-Es-7b8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="120" id="NAt-AW-F9V"/>
+                <constraint firstItem="ZWx-6f-yZy" firstAttribute="top" secondItem="k3N-Es-7b8" secondAttribute="bottom" constant="80" id="PtW-Jg-qCn"/>
+                <constraint firstItem="xP7-rK-zj4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="XIn-nU-124"/>
+                <constraint firstItem="RAT-sq-F9U" firstAttribute="top" secondItem="ZWx-6f-yZy" secondAttribute="top" id="ZN7-fP-1gw"/>
+                <constraint firstItem="xP7-rK-zj4" firstAttribute="top" secondItem="ZWx-6f-yZy" secondAttribute="bottom" constant="80" id="asT-FY-1Q6"/>
+                <constraint firstItem="RAT-sq-F9U" firstAttribute="height" secondItem="ZWx-6f-yZy" secondAttribute="height" multiplier="2:5" id="dtD-Lb-GCw"/>
+                <constraint firstItem="RAT-sq-F9U" firstAttribute="width" secondItem="ZWx-6f-yZy" secondAttribute="width" multiplier="2:5" id="ftO-WH-3Zv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xP7-rK-zj4" secondAttribute="trailing" constant="60" id="gHn-rf-ltR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZWx-6f-yZy" secondAttribute="trailing" constant="60" id="iBI-lB-m0F"/>
+                <constraint firstItem="k3N-Es-7b8" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="yTx-w4-VAl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="durationLabel" destination="k3N-Es-7b8" id="cbc-m6-YcA"/>
+                <outlet property="hangUpBtn" destination="xP7-rK-zj4" id="0DQ-uL-Be0"/>
+                <outlet property="viewLocalVideo" destination="RAT-sq-F9U" id="wOU-zi-rh0"/>
+                <outlet property="viewRemoteVideo" destination="ZWx-6f-yZy" id="gnt-Kb-4kC"/>
+            </connections>
+            <point key="canvasLocation" x="-17.39130434782609" y="-147.32142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hangup" width="33.5" height="33.5"/>
+    </resources>
+</document>

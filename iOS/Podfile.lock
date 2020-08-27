@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - AgoraRtcEngine_iOS (3.1.0)
+  - IQKeyboardManager (6.5.6)
+
+DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - AgoraRtcEngine_iOS (~> 3.1.0)
+  - IQKeyboardManager
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - AgoraRtcEngine_iOS
+    - IQKeyboardManager
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AgoraRtcEngine_iOS: 59db1384cef2791af5bcaa8784191a30569bf9e6
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+
+PODFILE CHECKSUM: 742f6cef5b91470b54373c5395dca8cccdc1366c
+
+COCOAPODS: 1.8.4

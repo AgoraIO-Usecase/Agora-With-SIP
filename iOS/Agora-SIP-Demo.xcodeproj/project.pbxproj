@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		039C336024F76AC8006791E2 /* AppID.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C335E24F76AC8006791E2 /* AppID.m */; };
+		371AB0FB24BDD551005417D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371AB0FA24BDD551005417D5 /* Assets.xcassets */; };
+		371AB0FE24BDD551005417D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371AB0FC24BDD551005417D5 /* LaunchScreen.storyboard */; };
+		371AB10124BDD551005417D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB10024BDD551005417D5 /* main.m */; };
+		371AB16024BDD570005417D5 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB10924BDD56F005417D5 /* NetworkManager.m */; };
+		371AB16124BDD570005417D5 /* CallPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371AB10B24BDD56F005417D5 /* CallPhoneViewController.xib */; };
+		371AB16224BDD570005417D5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB10C24BDD56F005417D5 /* HomeViewController.m */; };
+		371AB16324BDD570005417D5 /* CallSIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371AB10D24BDD56F005417D5 /* CallSIPViewController.xib */; };
+		371AB16424BDD570005417D5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371AB11024BDD56F005417D5 /* HomeViewController.xib */; };
+		371AB16524BDD570005417D5 /* CallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB11224BDD56F005417D5 /* CallView.m */; };
+		371AB16624BDD570005417D5 /* CallSIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB11324BDD56F005417D5 /* CallSIPViewController.m */; };
+		371AB16724BDD570005417D5 /* CallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371AB11524BDD56F005417D5 /* CallView.xib */; };
+		371AB16824BDD570005417D5 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371AB11624BDD56F005417D5 /* SettingViewController.xib */; };
+		371AB16924BDD570005417D5 /* CallPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB11724BDD56F005417D5 /* CallPhoneViewController.m */; };
+		371AB16A24BDD570005417D5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB11924BDD56F005417D5 /* SettingViewController.m */; };
+		371AB18A24BDD581005417D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB18924BDD580005417D5 /* AppDelegate.m */; };
+		371AB18F24BDD6F7005417D5 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB18E24BDD6F7005417D5 /* libresolv.tbd */; };
+		371AB19124BDD6FF005417D5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19024BDD6FF005417D5 /* libc++.tbd */; };
+		371AB19324BDD707005417D5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19224BDD707005417D5 /* Accelerate.framework */; };
+		371AB19524BDD70E005417D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19424BDD70E005417D5 /* SystemConfiguration.framework */; };
+		371AB19724BDD715005417D5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19624BDD715005417D5 /* CoreMedia.framework */; };
+		371AB19924BDD71C005417D5 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19824BDD71C005417D5 /* VideoToolbox.framework */; };
+		371AB19B24BDD723005417D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19A24BDD723005417D5 /* AudioToolbox.framework */; };
+		371AB19D24BDD729005417D5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19C24BDD729005417D5 /* CoreTelephony.framework */; };
+		371AB19F24BDD730005417D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19E24BDD730005417D5 /* AVFoundation.framework */; };
+		371AB1A124BDD737005417D5 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB1A024BDD737005417D5 /* CoreML.framework */; };
+		DD6B2CACAB70A0441B97B465 /* Pods_Agora_SIP_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		371AB18B24BDD5B6005417D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		039C335E24F76AC8006791E2 /* AppID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppID.m; sourceTree = "<group>"; };
+		039C335F24F76AC8006791E2 /* AppID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppID.h; sourceTree = "<group>"; };
+		371AB0EB24BDD54F005417D5 /* Agora-SIP-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora-SIP-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		371AB0FA24BDD551005417D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		371AB0FD24BDD551005417D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		371AB0FF24BDD551005417D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		371AB10024BDD551005417D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		371AB10824BDD56F005417D5 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		371AB10924BDD56F005417D5 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		371AB10B24BDD56F005417D5 /* CallPhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallPhoneViewController.xib; sourceTree = "<group>"; };
+		371AB10C24BDD56F005417D5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		371AB10D24BDD56F005417D5 /* CallSIPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallSIPViewController.xib; sourceTree = "<group>"; };
+		371AB10E24BDD56F005417D5 /* CallSIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSIPViewController.h; sourceTree = "<group>"; };
+		371AB10F24BDD56F005417D5 /* CallPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallPhoneViewController.h; sourceTree = "<group>"; };
+		371AB11024BDD56F005417D5 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		371AB11124BDD56F005417D5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		371AB11224BDD56F005417D5 /* CallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallView.m; sourceTree = "<group>"; };
+		371AB11324BDD56F005417D5 /* CallSIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSIPViewController.m; sourceTree = "<group>"; };
+		371AB11424BDD56F005417D5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		371AB11524BDD56F005417D5 /* CallView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallView.xib; sourceTree = "<group>"; };
+		371AB11624BDD56F005417D5 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		371AB11724BDD56F005417D5 /* CallPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallPhoneViewController.m; sourceTree = "<group>"; };
+		371AB11824BDD56F005417D5 /* CallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallView.h; sourceTree = "<group>"; };
+		371AB11924BDD56F005417D5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		371AB18824BDD580005417D5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		371AB18924BDD580005417D5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		371AB18E24BDD6F7005417D5 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		371AB19024BDD6FF005417D5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		371AB19224BDD707005417D5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		371AB19424BDD70E005417D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		371AB19624BDD715005417D5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		371AB19824BDD71C005417D5 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		371AB19A24BDD723005417D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		371AB19C24BDD729005417D5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		371AB19E24BDD730005417D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		371AB1A024BDD737005417D5 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.release.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agora_SIP_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		371AB0E824BDD54F005417D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AB1A124BDD737005417D5 /* CoreML.framework in Frameworks */,
+				371AB19F24BDD730005417D5 /* AVFoundation.framework in Frameworks */,
+				371AB19D24BDD729005417D5 /* CoreTelephony.framework in Frameworks */,
+				371AB19B24BDD723005417D5 /* AudioToolbox.framework in Frameworks */,
+				371AB19924BDD71C005417D5 /* VideoToolbox.framework in Frameworks */,
+				371AB19724BDD715005417D5 /* CoreMedia.framework in Frameworks */,
+				371AB19524BDD70E005417D5 /* SystemConfiguration.framework in Frameworks */,
+				371AB19324BDD707005417D5 /* Accelerate.framework in Frameworks */,
+				371AB19124BDD6FF005417D5 /* libc++.tbd in Frameworks */,
+				371AB18F24BDD6F7005417D5 /* libresolv.tbd in Frameworks */,
+				DD6B2CACAB70A0441B97B465 /* Pods_Agora_SIP_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		371AB0E224BDD54F005417D5 = {
+			isa = PBXGroup;
+			children = (
+				371AB0ED24BDD54F005417D5 /* Agora-SIP-Demo */,
+				371AB0EC24BDD54F005417D5 /* Products */,
+				371AB18D24BDD6F6005417D5 /* Frameworks */,
+				7D628EB07C282C370AC85561 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		371AB0EC24BDD54F005417D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				371AB0EB24BDD54F005417D5 /* Agora-SIP-Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		371AB0ED24BDD54F005417D5 /* Agora-SIP-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				371AB10724BDD56F005417D5 /* Common */,
+				371AB10A24BDD56F005417D5 /* Interface */,
+				371AB0FA24BDD551005417D5 /* Assets.xcassets */,
+				371AB0FC24BDD551005417D5 /* LaunchScreen.storyboard */,
+				371AB0FF24BDD551005417D5 /* Info.plist */,
+				371AB18824BDD580005417D5 /* AppDelegate.h */,
+				371AB18924BDD580005417D5 /* AppDelegate.m */,
+				371AB10024BDD551005417D5 /* main.m */,
+			);
+			path = "Agora-SIP-Demo";
+			sourceTree = "<group>";
+		};
+		371AB10724BDD56F005417D5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				039C335F24F76AC8006791E2 /* AppID.h */,
+				039C335E24F76AC8006791E2 /* AppID.m */,
+				371AB10824BDD56F005417D5 /* NetworkManager.h */,
+				371AB10924BDD56F005417D5 /* NetworkManager.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		371AB10A24BDD56F005417D5 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				371AB10F24BDD56F005417D5 /* CallPhoneViewController.h */,
+				371AB11724BDD56F005417D5 /* CallPhoneViewController.m */,
+				371AB10B24BDD56F005417D5 /* CallPhoneViewController.xib */,
+				371AB10E24BDD56F005417D5 /* CallSIPViewController.h */,
+				371AB11324BDD56F005417D5 /* CallSIPViewController.m */,
+				371AB10D24BDD56F005417D5 /* CallSIPViewController.xib */,
+				371AB11824BDD56F005417D5 /* CallView.h */,
+				371AB11224BDD56F005417D5 /* CallView.m */,
+				371AB11524BDD56F005417D5 /* CallView.xib */,
+				371AB11424BDD56F005417D5 /* HomeViewController.h */,
+				371AB10C24BDD56F005417D5 /* HomeViewController.m */,
+				371AB11024BDD56F005417D5 /* HomeViewController.xib */,
+				371AB11124BDD56F005417D5 /* SettingViewController.h */,
+				371AB11924BDD56F005417D5 /* SettingViewController.m */,
+				371AB11624BDD56F005417D5 /* SettingViewController.xib */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		371AB18D24BDD6F6005417D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371AB1A024BDD737005417D5 /* CoreML.framework */,
+				371AB19E24BDD730005417D5 /* AVFoundation.framework */,
+				371AB19C24BDD729005417D5 /* CoreTelephony.framework */,
+				371AB19A24BDD723005417D5 /* AudioToolbox.framework */,
+				371AB19824BDD71C005417D5 /* VideoToolbox.framework */,
+				371AB19624BDD715005417D5 /* CoreMedia.framework */,
+				371AB19424BDD70E005417D5 /* SystemConfiguration.framework */,
+				371AB19224BDD707005417D5 /* Accelerate.framework */,
+				371AB19024BDD6FF005417D5 /* libc++.tbd */,
+				371AB18E24BDD6F7005417D5 /* libresolv.tbd */,
+				DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D628EB07C282C370AC85561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */,
+				5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		371AB0EA24BDD54F005417D5 /* Agora-SIP-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 371AB10424BDD551005417D5 /* Build configuration list for PBXNativeTarget "Agora-SIP-Demo" */;
+			buildPhases = (
+				0E40D8440485EEB59708BE52 /* [CP] Check Pods Manifest.lock */,
+				371AB0E724BDD54F005417D5 /* Sources */,
+				371AB0E824BDD54F005417D5 /* Frameworks */,
+				371AB0E924BDD54F005417D5 /* Resources */,
+				371AB18B24BDD5B6005417D5 /* CopyFiles */,
+				96D21A79658A9F56648C10FF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Agora-SIP-Demo";
+			productName = "Agora-SIP-Demo";
+			productReference = 371AB0EB24BDD54F005417D5 /* Agora-SIP-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		371AB0E324BDD54F005417D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = liuwangjun;
+				TargetAttributes = {
+					371AB0EA24BDD54F005417D5 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 371AB0E624BDD54F005417D5 /* Build configuration list for PBXProject "Agora-SIP-Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 371AB0E224BDD54F005417D5;
+			productRefGroup = 371AB0EC24BDD54F005417D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				371AB0EA24BDD54F005417D5 /* Agora-SIP-Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		371AB0E924BDD54F005417D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371AB16824BDD570005417D5 /* SettingViewController.xib in Resources */,
+				371AB0FE24BDD551005417D5 /* LaunchScreen.storyboard in Resources */,
+				371AB16324BDD570005417D5 /* CallSIPViewController.xib in Resources */,
+				371AB16424BDD570005417D5 /* HomeViewController.xib in Resources */,
+				371AB16124BDD570005417D5 /* CallPhoneViewController.xib in Resources */,
+				371AB16724BDD570005417D5 /* CallView.xib in Resources */,
+				371AB0FB24BDD551005417D5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E40D8440485EEB59708BE52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agora-SIP-Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D21A79658A9F56648C10FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		371AB0E724BDD54F005417D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				039C336024F76AC8006791E2 /* AppID.m in Sources */,
+				371AB16524BDD570005417D5 /* CallView.m in Sources */,
+				371AB16924BDD570005417D5 /* CallPhoneViewController.m in Sources */,
+				371AB16624BDD570005417D5 /* CallSIPViewController.m in Sources */,
+				371AB16A24BDD570005417D5 /* SettingViewController.m in Sources */,
+				371AB18A24BDD581005417D5 /* AppDelegate.m in Sources */,
+				371AB16024BDD570005417D5 /* NetworkManager.m in Sources */,
+				371AB10124BDD551005417D5 /* main.m in Sources */,
+				371AB16224BDD570005417D5 /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		371AB0FC24BDD551005417D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				371AB0FD24BDD551005417D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		371AB10224BDD551005417D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		371AB10324BDD551005417D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		371AB10524BDD551005417D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GM72UGLGZW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agora-SIP-Demo/External",
+				);
+				INFOPLIST_FILE = "Agora-SIP-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.qzlink.Agora-SIP-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = App;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		371AB10624BDD551005417D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GM72UGLGZW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agora-SIP-Demo/External",
+				);
+				INFOPLIST_FILE = "Agora-SIP-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.qzlink.Agora-SIP-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = App;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		371AB0E624BDD54F005417D5 /* Build configuration list for PBXProject "Agora-SIP-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371AB10224BDD551005417D5 /* Debug */,
+				371AB10324BDD551005417D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		371AB10424BDD551005417D5 /* Build configuration list for PBXNativeTarget "Agora-SIP-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				371AB10524BDD551005417D5 /* Debug */,
+				371AB10624BDD551005417D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 371AB0E324BDD54F005417D5 /* Project object */;
+}
