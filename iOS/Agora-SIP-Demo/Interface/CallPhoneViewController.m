@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "NetworkManager.h"
 #import "CallView.h"
-#import "AppID.h"
+#import "IMHelpVC.h"
 
 @interface CallPhoneViewController ()<AgoraRtcEngineDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *roomIdTF;
@@ -26,6 +26,9 @@
 
 @property (nonatomic, strong) NSTimer *__nullable timer;
 @property (nonatomic, assign) NSUInteger timeCount;
+
+@property (copy, nonatomic) NSString *token;
+@property (copy, nonatomic) NSString *uid;
 @end
 
 @implementation CallPhoneViewController
@@ -34,7 +37,7 @@
 {
     if (_agoraKit == nil)
     {
-        _agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:appID delegate:self];
+        _agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:AgoraAppId delegate:self];
         [_agoraKit enableAudio];
         [_agoraKit enableLocalAudio:YES];
     }
@@ -67,6 +70,8 @@
     NSString *caller = [[NSUserDefaults standardUserDefaults] valueForKey:@"LocalCaller"];
     if (caller.length > 0) self.callerTF.text = caller;
     [self refreshRoomId:nil];
+    self.token = @"";
+    self.uid = @"0";
 }
 
 - (IBAction)refreshRoomId:(id)sender
@@ -111,7 +116,7 @@
         NSString *code = responseObject[@"code"];
         if ([code isEqualToString:@"000000"])
         {
-            [weakSelf joinChannel];
+            [weakSelf getTokenForRoomid:weakSelf.roomId];
         }else
         {
             [weakSelf showTips:responseObject[@"msg"]];
@@ -163,7 +168,7 @@
 
 - (void)joinChannel
 {
-    [self.agoraKit joinChannelByToken:token channelId:self.roomId info:@"" uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+    [self.agoraKit joinChannelByToken:self.token channelId:self.roomId info:@"" uid:[self.uid integerValue] joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
         NSLog(@"Join channel");
     }];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
@@ -173,6 +178,37 @@
         self.timeCount = 0;
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
     }
+}
+
+- (void)getTokenForRoomid:(NSString*)roomid
+{
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSString *url = [appDelegate appHttpUrl];
+    url = [NSString stringWithFormat:@"%@/%@?roomid=%@", url, @"getTokenForRoomid", roomid];
+    __weak __typeof__(self) weakSelf = self;
+    [self.network requestWithUrl:url parameters:nil success:^(id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = responseObject[@"code"];
+        if ([code isEqualToString:@"000000"])
+        {
+            NSString *token = responseObject[@"token"];
+            NSString *uid = responseObject[@"uid"];
+            if ([token isKindOfClass:[NSString class]])
+            {
+                weakSelf.token = token;
+            }
+            if ([uid isKindOfClass:[NSString class]])
+            {
+                weakSelf.uid = uid;
+            }
+            [weakSelf joinChannel];
+        }else
+        {
+            [weakSelf showTips:responseObject[@"msg"]];
+        }
+    } failure:^(NSError * _Nullable error) {
+        [weakSelf showTips:error.userInfo.description];
+    }];
 }
 
 - (void)updateTime:(id)sender
@@ -203,4 +239,8 @@
     [self showTips:@"The other party hangs up"];
 }
 
+- (IBAction)help:(id)sender {
+    IMHelpVC *controller = [[IMHelpVC alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end

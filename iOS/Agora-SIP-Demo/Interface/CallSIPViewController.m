@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "NetworkManager.h"
 #import "CallView.h"
-#import "AppID.h"
+#import "IMHelpVC.h"
 
 @interface CallSIPViewController ()<AgoraRtcEngineDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *roomIdTF;
@@ -29,6 +29,8 @@
 @property (nonatomic, strong) NSTimer *__nullable timer;
 @property (nonatomic, assign) NSUInteger timeCount;
 
+@property (copy, nonatomic) NSString *token;
+@property (copy, nonatomic) NSString *uid;
 @end
 
 @implementation CallSIPViewController
@@ -37,7 +39,7 @@
 {
     if (_agoraKit == nil)
     {
-        _agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:appID delegate:self];
+        _agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:AgoraAppId delegate:self];
     }
     return _agoraKit;
 }
@@ -65,7 +67,6 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"CALL SIP";
-    self.gwTF.text = @"47.100.83.123:5088";
     [self refreshRoomId:nil];
 }
 
@@ -77,11 +78,11 @@
 
 - (IBAction)videoCall:(id)sender
 {
-    BOOL fillAll = [self fillAll];
-    if (!fillAll) return;
-    [self setupVideo];
-    [self setupLocalVideo];
-    self.roomId = self.roomIdTF.text;
+//    BOOL fillAll = [self fillAll];
+//    if (!fillAll) return;
+//    [self setupVideo];
+//    [self setupLocalVideo];
+//    self.roomId = self.roomIdTF.text;
 }
 
 - (IBAction)audioCall:(id)sender
@@ -112,7 +113,7 @@
         NSString *code = responseObject[@"code"];
         if ([code isEqualToString:@"000000"])
         {
-            [weakSelf joinChannel];
+            [weakSelf getTokenForRoomid:weakSelf.roomId];
         }else
         {
             [weakSelf showTips:responseObject[@"msg"]];
@@ -159,17 +160,6 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)setupVideo
-{
-    [self.agoraKit enableVideo];
-
-    AgoraVideoEncoderConfiguration *encoderConfiguration =
-    [[AgoraVideoEncoderConfiguration alloc] initWithSize:AgoraVideoDimension640x360
-                                               frameRate:AgoraVideoFrameRateFps15
-                                                 bitrate:AgoraVideoBitrateStandard
-                                         orientationMode:AgoraVideoOutputOrientationModeAdaptative];
-    [self.agoraKit setVideoEncoderConfiguration:encoderConfiguration];
-}
 
 - (void)setupLocalVideo
 {
@@ -212,7 +202,7 @@
 
 - (void)joinChannel
 {
-    [self.agoraKit joinChannelByToken:token channelId:self.roomId info:@"" uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+    [self.agoraKit joinChannelByToken:self.token channelId:self.roomId info:@"" uid:[self.uid integerValue] joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
         NSLog(@"Join channel");
     }];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
@@ -222,6 +212,37 @@
         self.timeCount = 0;
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
     }
+}
+
+- (void)getTokenForRoomid:(NSString*)roomid
+{
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSString *url = [appDelegate appHttpUrl];
+    url = [NSString stringWithFormat:@"%@/%@?roomid=%@", url, @"getTokenForRoomid", roomid];
+    __weak __typeof__(self) weakSelf = self;
+    [self.network requestWithUrl:url parameters:nil success:^(id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = responseObject[@"code"];
+        if ([code isEqualToString:@"000000"])
+        {
+            NSString *token = responseObject[@"token"];
+            NSString *uid = responseObject[@"uid"];
+            if ([token isKindOfClass:[NSString class]])
+            {
+                weakSelf.token = token;
+            }
+            if ([uid isKindOfClass:[NSString class]])
+            {
+                weakSelf.uid = uid;
+            }
+            [weakSelf joinChannel];
+        }else
+        {
+            [weakSelf showTips:responseObject[@"msg"]];
+        }
+    } failure:^(NSError * _Nullable error) {
+        [weakSelf showTips:error.userInfo.description];
+    }];
 }
 
 - (void)updateTime:(id)sender
@@ -259,6 +280,11 @@
     NSLog(@"didOfflineOfUid");
     [self hangUp];
     [self showTips:@"The other party hangs up"];
+}
+
+- (IBAction)help:(id)sender {
+    IMHelpVC *controller = [[IMHelpVC alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

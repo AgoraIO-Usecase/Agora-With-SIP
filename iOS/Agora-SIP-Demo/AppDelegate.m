@@ -109,7 +109,7 @@
 {
     NSString *ip = [[NSUserDefaults standardUserDefaults] valueForKey:@"LocalIP"];
     NSString *port = [[NSUserDefaults standardUserDefaults] valueForKey:@"LocalPort"];
-    NSString *url = @"http://39.99.148.35:9898/api/meet";
+    NSString *url = [NSString stringWithFormat:@"http://%@:%@/api/meet", DefaultIP, DefaultPort];
     if (ip.length > 0 && port.length > 0)
     {
         url = [NSString stringWithFormat:@"http://%@:%@/api/meet",ip,port];
@@ -118,5 +118,16 @@
     return url;
 }
 
-
+- (NSString *)appHttpUrl
+{
+    NSString *ip = [[NSUserDefaults standardUserDefaults] valueForKey:@"LocalIP"];
+    NSString *port = [[NSUserDefaults standardUserDefaults] valueForKey:@"LocalPort"];
+    NSString *url = [NSString stringWithFormat:@"http://%@:%@/api/app", DefaultIP, DefaultPort];
+    if (ip.length > 0 && port.length > 0)
+    {
+        url = [NSString stringWithFormat:@"http://%@:%@/api/app",ip,port];
+    }
+    
+    return url;
+}
 @end

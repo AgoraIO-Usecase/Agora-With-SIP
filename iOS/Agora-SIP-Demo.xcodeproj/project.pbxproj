@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		039C336024F76AC8006791E2 /* AppID.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C335E24F76AC8006791E2 /* AppID.m */; };
 		371AB0FB24BDD551005417D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371AB0FA24BDD551005417D5 /* Assets.xcassets */; };
 		371AB0FE24BDD551005417D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371AB0FC24BDD551005417D5 /* LaunchScreen.storyboard */; };
 		371AB10124BDD551005417D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 371AB10024BDD551005417D5 /* main.m */; };
@@ -33,7 +32,9 @@
 		371AB19D24BDD729005417D5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19C24BDD729005417D5 /* CoreTelephony.framework */; };
 		371AB19F24BDD730005417D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB19E24BDD730005417D5 /* AVFoundation.framework */; };
 		371AB1A124BDD737005417D5 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AB1A024BDD737005417D5 /* CoreML.framework */; };
-		DD6B2CACAB70A0441B97B465 /* Pods_Agora_SIP_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */; };
+		37F478C424F8A2E600DEFBB9 /* IMHelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F478C124F8A2E500DEFBB9 /* IMHelpVC.xib */; };
+		37F478C524F8A2E600DEFBB9 /* IMHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F478C324F8A2E600DEFBB9 /* IMHelpVC.m */; };
+		7CE37DDB4993F2635577859C /* Pods_Agora_SIP_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B1A6B4700A5D5493D2306C /* Pods_Agora_SIP_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,8 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		039C335E24F76AC8006791E2 /* AppID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppID.m; sourceTree = "<group>"; };
-		039C335F24F76AC8006791E2 /* AppID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppID.h; sourceTree = "<group>"; };
 		371AB0EB24BDD54F005417D5 /* Agora-SIP-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora-SIP-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		371AB0FA24BDD551005417D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371AB0FD24BDD551005417D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,9 +84,12 @@
 		371AB19C24BDD729005417D5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		371AB19E24BDD730005417D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		371AB1A024BDD737005417D5 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
-		5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.release.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agora_SIP_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F478C124F8A2E500DEFBB9 /* IMHelpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IMHelpVC.xib; sourceTree = "<group>"; };
+		37F478C224F8A2E500DEFBB9 /* IMHelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHelpVC.h; sourceTree = "<group>"; };
+		37F478C324F8A2E600DEFBB9 /* IMHelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHelpVC.m; sourceTree = "<group>"; };
+		C61081A34ED5A67F1FF8C62F /* Pods-Agora-SIP-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		D8B1A6B4700A5D5493D2306C /* Pods_Agora_SIP_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agora_SIP_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4FB8E242D120F0962650F58 /* Pods-Agora-SIP-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-SIP-Demo.release.xcconfig"; path = "Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,20 +107,29 @@
 				371AB19324BDD707005417D5 /* Accelerate.framework in Frameworks */,
 				371AB19124BDD6FF005417D5 /* libc++.tbd in Frameworks */,
 				371AB18F24BDD6F7005417D5 /* libresolv.tbd in Frameworks */,
-				DD6B2CACAB70A0441B97B465 /* Pods_Agora_SIP_Demo.framework in Frameworks */,
+				7CE37DDB4993F2635577859C /* Pods_Agora_SIP_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25F749E018B5789088DD1F64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C61081A34ED5A67F1FF8C62F /* Pods-Agora-SIP-Demo.debug.xcconfig */,
+				E4FB8E242D120F0962650F58 /* Pods-Agora-SIP-Demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		371AB0E224BDD54F005417D5 = {
 			isa = PBXGroup;
 			children = (
 				371AB0ED24BDD54F005417D5 /* Agora-SIP-Demo */,
 				371AB0EC24BDD54F005417D5 /* Products */,
 				371AB18D24BDD6F6005417D5 /* Frameworks */,
-				7D628EB07C282C370AC85561 /* Pods */,
+				25F749E018B5789088DD1F64 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,8 +159,6 @@
 		371AB10724BDD56F005417D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				039C335F24F76AC8006791E2 /* AppID.h */,
-				039C335E24F76AC8006791E2 /* AppID.m */,
 				371AB10824BDD56F005417D5 /* NetworkManager.h */,
 				371AB10924BDD56F005417D5 /* NetworkManager.m */,
 			);
@@ -165,6 +174,9 @@
 				371AB10E24BDD56F005417D5 /* CallSIPViewController.h */,
 				371AB11324BDD56F005417D5 /* CallSIPViewController.m */,
 				371AB10D24BDD56F005417D5 /* CallSIPViewController.xib */,
+				37F478C224F8A2E500DEFBB9 /* IMHelpVC.h */,
+				37F478C324F8A2E600DEFBB9 /* IMHelpVC.m */,
+				37F478C124F8A2E500DEFBB9 /* IMHelpVC.xib */,
 				371AB11824BDD56F005417D5 /* CallView.h */,
 				371AB11224BDD56F005417D5 /* CallView.m */,
 				371AB11524BDD56F005417D5 /* CallView.xib */,
@@ -191,18 +203,9 @@
 				371AB19224BDD707005417D5 /* Accelerate.framework */,
 				371AB19024BDD6FF005417D5 /* libc++.tbd */,
 				371AB18E24BDD6F7005417D5 /* libresolv.tbd */,
-				DFA6FE5E2D52DACAFB003527 /* Pods_Agora_SIP_Demo.framework */,
+				D8B1A6B4700A5D5493D2306C /* Pods_Agora_SIP_Demo.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7D628EB07C282C370AC85561 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */,
-				5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 371AB10424BDD551005417D5 /* Build configuration list for PBXNativeTarget "Agora-SIP-Demo" */;
 			buildPhases = (
-				0E40D8440485EEB59708BE52 /* [CP] Check Pods Manifest.lock */,
+				B742320DC777445005904716 /* [CP] Check Pods Manifest.lock */,
 				371AB0E724BDD54F005417D5 /* Sources */,
 				371AB0E824BDD54F005417D5 /* Frameworks */,
 				371AB0E924BDD54F005417D5 /* Resources */,
 				371AB18B24BDD5B6005417D5 /* CopyFiles */,
-				96D21A79658A9F56648C10FF /* [CP] Embed Pods Frameworks */,
+				0CFCDBB0C3A1A040C416865A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +273,7 @@
 				371AB16324BDD570005417D5 /* CallSIPViewController.xib in Resources */,
 				371AB16424BDD570005417D5 /* HomeViewController.xib in Resources */,
 				371AB16124BDD570005417D5 /* CallPhoneViewController.xib in Resources */,
+				37F478C424F8A2E600DEFBB9 /* IMHelpVC.xib in Resources */,
 				371AB16724BDD570005417D5 /* CallView.xib in Resources */,
 				371AB0FB24BDD551005417D5 /* Assets.xcassets in Resources */,
 			);
@@ -278,7 +282,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E40D8440485EEB59708BE52 /* [CP] Check Pods Manifest.lock */ = {
+		0CFCDBB0C3A1A040C416865A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B742320DC777445005904716 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,23 +321,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96D21A79658A9F56648C10FF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agora-SIP-Demo/Pods-Agora-SIP-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,7 +328,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				039C336024F76AC8006791E2 /* AppID.m in Sources */,
 				371AB16524BDD570005417D5 /* CallView.m in Sources */,
 				371AB16924BDD570005417D5 /* CallPhoneViewController.m in Sources */,
 				371AB16624BDD570005417D5 /* CallSIPViewController.m in Sources */,
@@ -332,6 +335,7 @@
 				371AB18A24BDD581005417D5 /* AppDelegate.m in Sources */,
 				371AB16024BDD570005417D5 /* NetworkManager.m in Sources */,
 				371AB10124BDD551005417D5 /* main.m in Sources */,
+				37F478C524F8A2E600DEFBB9 /* IMHelpVC.m in Sources */,
 				371AB16224BDD570005417D5 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -452,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -462,11 +466,12 @@
 		};
 		371AB10524BDD551005417D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB602B5B0B9785398CD493B6 /* Pods-Agora-SIP-Demo.debug.xcconfig */;
+			baseConfigurationReference = C61081A34ED5A67F1FF8C62F /* Pods-Agora-SIP-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = GM72UGLGZW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,20 +483,23 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.qzlink.Agora-SIP-Demo";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qzlink.Agora-SIP-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = App;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
 		371AB10624BDD551005417D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BBC63D3E7D042EB5FF83B8F /* Pods-Agora-SIP-Demo.release.xcconfig */;
+			baseConfigurationReference = E4FB8E242D120F0962650F58 /* Pods-Agora-SIP-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = GM72UGLGZW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,10 +511,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.qzlink.Agora-SIP-Demo";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qzlink.Agora-SIP-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = App;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};

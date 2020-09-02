@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +70,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter gw (ex:47.100.83.164:5088)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="162-eI-2nk">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter gw" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="162-eI-2nk">
                     <rect key="frame" x="20" y="338" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Ipb-Z4-bGg"/>
@@ -128,12 +129,25 @@
                         <action selector="videoCall:" destination="-1" eventType="touchUpInside" id="NXi-Vb-arc"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you need a test account, please contact us." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO7-lX-EcX">
-                    <rect key="frame" x="20" y="392" width="374" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO7-lX-EcX">
+                    <rect key="frame" x="362" y="392" width="32" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.30196078430000001" green="0.47843137250000001" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn5-rs-8Hz">
+                    <rect key="frame" x="362" y="417" width="32" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="YFj-oP-bKH"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-j2-mN3">
+                    <rect key="frame" x="362" y="392" width="32" height="30"/>
+                    <connections>
+                        <action selector="help:" destination="-1" eventType="touchUpInside" id="epq-Y4-JOo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -141,7 +155,9 @@
                 <constraint firstItem="ros-s5-I2j" firstAttribute="top" secondItem="MIH-Ah-Htg" secondAttribute="bottom" constant="5" id="1jM-FT-WUG"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Vzg-lx-qzE" secondAttribute="trailing" constant="20" id="4pl-Fa-Nb3"/>
                 <constraint firstItem="oLK-Rh-Ogi" firstAttribute="top" secondItem="STg-R4-W6h" secondAttribute="bottom" constant="5" id="5oM-4L-H81"/>
+                <constraint firstItem="qn5-rs-8Hz" firstAttribute="top" secondItem="YO7-lX-EcX" secondAttribute="bottom" constant="-5" id="61P-HD-DBG"/>
                 <constraint firstItem="STg-R4-W6h" firstAttribute="top" secondItem="ros-s5-I2j" secondAttribute="bottom" constant="20" id="8yj-ZN-w8s"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="leading" secondItem="qn5-rs-8Hz" secondAttribute="leading" id="AJf-Hh-ApS"/>
                 <constraint firstItem="RdQ-Ka-LhR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="BFd-Xk-HCO"/>
                 <constraint firstItem="Vzg-lx-qzE" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="C4e-2M-TMd"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="X0S-pp-Hmz" secondAttribute="bottom" constant="60" id="EUq-75-kal"/>
@@ -149,13 +165,15 @@
                 <constraint firstItem="162-eI-2nk" firstAttribute="top" secondItem="MfQ-ma-CES" secondAttribute="bottom" constant="5" id="KZu-MM-lsB"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="oLK-Rh-Ogi" secondAttribute="trailing" constant="20" id="MPc-9j-53a"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="X0S-pp-Hmz" secondAttribute="trailing" constant="60" id="Pfn-Gb-y8E"/>
-                <constraint firstItem="YO7-lX-EcX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Q90-aw-KCp"/>
                 <constraint firstItem="X0S-pp-Hmz" firstAttribute="trailing" secondItem="MAu-a9-sfE" secondAttribute="trailing" id="RP2-M8-0dP"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="trailing" secondItem="qn5-rs-8Hz" secondAttribute="trailing" id="Ttm-9Q-qkZ"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="YO7-lX-EcX" secondAttribute="trailing" constant="20" id="Vff-dG-up1"/>
                 <constraint firstItem="MfQ-ma-CES" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="Vuy-Ml-nal"/>
                 <constraint firstItem="RdQ-Ka-LhR" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="40" id="Ypf-TX-oe5"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="162-eI-2nk" secondAttribute="trailing" constant="20" id="Z1z-zz-kJE"/>
                 <constraint firstItem="oLK-Rh-Ogi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="awI-IQ-8BR"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="trailing" secondItem="HJK-j2-mN3" secondAttribute="trailing" id="bp1-c2-8L2"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="bottom" secondItem="HJK-j2-mN3" secondAttribute="bottom" id="dQa-ly-jwP"/>
                 <constraint firstItem="ros-s5-I2j" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="da5-J5-84D"/>
                 <constraint firstItem="Vzg-lx-qzE" firstAttribute="top" secondItem="RdQ-Ka-LhR" secondAttribute="bottom" constant="5" id="f26-Uk-bRZ"/>
                 <constraint firstItem="MIH-Ah-Htg" firstAttribute="top" secondItem="Vzg-lx-qzE" secondAttribute="bottom" constant="20" id="fYv-hM-dEU"/>
@@ -167,10 +185,12 @@
                 <constraint firstItem="X0S-pp-Hmz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="60" id="p3L-hm-2AS"/>
                 <constraint firstItem="YO7-lX-EcX" firstAttribute="top" secondItem="162-eI-2nk" secondAttribute="bottom" constant="20" id="rGl-VI-QLO"/>
                 <constraint firstItem="rev-Sd-lfw" firstAttribute="centerY" secondItem="Vzg-lx-qzE" secondAttribute="centerY" id="vOa-UI-gMG"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="leading" secondItem="HJK-j2-mN3" secondAttribute="leading" id="vXS-Mt-aRi"/>
                 <constraint firstItem="X0S-pp-Hmz" firstAttribute="leading" secondItem="MAu-a9-sfE" secondAttribute="leading" id="wK9-DA-HL2"/>
+                <constraint firstItem="YO7-lX-EcX" firstAttribute="top" secondItem="HJK-j2-mN3" secondAttribute="top" id="wZI-oZ-TOI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="139" y="120"/>
+            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </view>
     </objects>
     <resources>
