@@ -12,8 +12,7 @@ This project demonstrates how you can use Agora to work with SIP.
 
 ## Quick Start
 
-This section shows you how to prepare, build, and run the sample application.
-You are all set. Now connect your Android device and run the project.
+Use Android Studio to open this project, wait for gradle sync to finish. After that you can build the project and start running it.
 
 ### A testing appid has been included in this sample, if you would like your own one to go production, please checkout `Contact Us` section.
 
