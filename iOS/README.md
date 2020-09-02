@@ -23,32 +23,13 @@ pod install
 ```
 
 Verify `Agora-SIP-Demo.xcworkspace` has been properly generated.
-
-### Obtain an App Id
-
-To build and run the sample application, get an App Id:
-
-1. Create a developer account at [agora.io](https://dashboard.agora.io/signin/). Once you finish the signup process, you will be redirected to the Dashboard.
-2. Navigate in the Dashboard tree on the left to **Projects** > **Project List**.
-3. Save the **App Id** from the Dashboard for later use.
-4. Generate a temp **Access Token** (valid for 24 hours) from dashboard page with given channel name, save for later use.
-
-5. Open `Agora-SIP-Demo.xcworkspace` and edit the `AppID.m` file. Update `<#Your App Id#>` with your App Id, and change `<#Temp Token#>` with the temp Access Token generated from dashboard. Note you can leave the token variable `nil` if your project has not turned on security token.
-
-    ```
-      NSString *const appID = <#Your App ID#>;
-      /* assign Token to nil if you have not enabled app certificate
-       * before you deploy your own token server, you can easily generate a temp token for dev use
-       * at https://dashboard.agora.io note the token generated are allowed to join corresponding room ONLY.
-       */
-      NSString *const token = <#Temp Token#>;
-    ```
-
 You are all set. Now connect your iPhone or iPad device and run the project.
+
+### A testing appid has been included in this sample, if you would like your own one to go production, please checkout `Contact Us` section.
 
 ## Contact Us
 
-- For bugs and problems, please email us(bd@lighthk.com) 
+- For integration guide, bugs and problems, please email bd@lighthk.com
 
 ## License
 
