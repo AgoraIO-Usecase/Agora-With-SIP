@@ -2,9 +2,14 @@ package com.qzlink.agorasipdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,9 +17,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.io.IOException;
+import java.util.Arrays;
+
+import javax.microedition.khronos.egl.EGLContext;
 
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
+import io.agora.rtc.video.AgoraVideoFrame;
+import io.agora.rtc.video.VideoCanvas;
+import io.agora.rtc.video.VideoEncoderConfiguration;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -29,6 +40,11 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
 
     private TextView tvHangUp;
 
+    private FrameLayout mLocalContainer;
+    private RelativeLayout mRemoteContainer;
+    private SurfaceView mLocalView;
+    private SurfaceView mRemoteView;
+
     protected RtcEngine mRtcEngine;
 
     private CallDataBean callDataBean;
@@ -36,6 +52,12 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
     protected final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
         @Override
         public void onFirstRemoteVideoDecoded(final int uid, int width, int height, int elapsed) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    setupRemoteVideo(uid);
+                }
+            });
         }
 
         @Override
@@ -62,17 +84,37 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
 
         tvHangUp = findViewById(R.id.tv_hang_up);
 
+        mLocalContainer = findViewById(R.id.local_video_view_container);
+        mRemoteContainer = findViewById(R.id.remote_video_view_container);
+
         tvHangUp.setOnClickListener(this);
 
         callDataBean = (CallDataBean) getIntent().getSerializableExtra(KEY_INTENT_CALL_DATA);
 
-        initAgoraEngine();
+        if (RxPermissions.getInstance(this).isGranted(android.Manifest.permission.RECORD_AUDIO) &&
+                RxPermissions.getInstance(this).isGranted(android.Manifest.permission.CAMERA) &&
+                RxPermissions.getInstance(this).isGranted(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 
-        joinChannel();
+            initAgoraEngine();
+        } else {
+            RxPermissions.getInstance(this).request(android.Manifest.permission.RECORD_AUDIO,
+                    android.Manifest.permission.CAMERA,
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    .subscribe(new Action1<Boolean>() {
+                        @Override
+                        public void call(Boolean granted) {
+                            if (granted)
+                                initAgoraEngine();
+                        }
+                    });
+        }
     }
 
     private void initAgoraEngine() {
         initializeAgoraEngine();
+
+        joinChannel();
+
         if (null != mRtcEngine) {
             mRtcEngine.setEnableSpeakerphone(false);
             mRtcEngine.setAudioProfile(2, 0);
@@ -83,10 +125,33 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
 
     private void initializeAgoraEngine() {
         try {
-            mRtcEngine = RtcEngine.create(this, getString(R.string.agora_app_id), mRtcEventHandler);
+            mRtcEngine = RtcEngine.create(this, Constants.getAgoraAppid(), mRtcEventHandler);
         } catch (Exception e) {
             throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
         }
+    }
+
+    private void setupRemoteVideo(int uid) {
+        // Only one remote video view is available for this
+        // tutorial. Here we check if there exists a surface
+        // view tagged as this uid.
+        int count = mRemoteContainer.getChildCount();
+        View view = null;
+        for (int i = 0; i < count; i++) {
+            View v = mRemoteContainer.getChildAt(i);
+            if (v.getTag() instanceof Integer && ((int) v.getTag()) == uid) {
+                view = v;
+            }
+        }
+
+        if (view != null) {
+            return;
+        }
+
+        mRemoteView = RtcEngine.CreateRendererView(getBaseContext());
+        mRemoteContainer.addView(mRemoteView);
+        mRtcEngine.setupRemoteVideo(new VideoCanvas(mRemoteView, VideoCanvas.RENDER_MODE_HIDDEN, uid));
+        mRemoteView.setTag(uid);
     }
 
     /**
@@ -94,20 +159,16 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
      */
     protected void joinChannel() {
         if (mRtcEngine != null && callDataBean != null) {
-            if (RxPermissions.getInstance(this).isGranted(android.Manifest.permission.RECORD_AUDIO)) {
-                // if you do not specify the uid, we will generate the uid for you
-                mRtcEngine.joinChannel(getString(R.string.agora_access_token), callDataBean.getRoomId(), "Extra Optional Data", 0);
-            } else {
-                RxPermissions.getInstance(this).request(android.Manifest.permission.RECORD_AUDIO)
-                        .subscribe(new Action1<Boolean>() {
-                            @Override
-                            public void call(Boolean granted) {
-                                if (granted)
-                                    // if you do not specify the uid, we will generate the uid for you
-                                    mRtcEngine.joinChannel(null, callDataBean.getRoomId(), "Extra Optional Data", 0);
-                            }
-                        });
-            }
+
+            String token = null;
+            if (!TextUtils.isEmpty(callDataBean.getToken()))
+                token = callDataBean.getToken();
+
+            int uid = 0;
+            if (!TextUtils.isEmpty(callDataBean.getUid()))
+                uid = Integer.parseInt(callDataBean.getUid());
+
+            mRtcEngine.joinChannel(token, callDataBean.getRoomId(), "Extra Optional Data", uid);
         }
     }
 
@@ -139,32 +200,15 @@ public class ConverseActivity extends AppCompatActivity implements View.OnClickL
         String url = Constants.requestKillCallUrl + "?roomid=" + callDataBean.getRoomId() +
                 "&caller=" + callDataBean.getCaller() + "&callee=" + callDataBean.getPhone();
 
-        request(url);
-    }
+        RequestHelper helper = new RequestHelper(url);
 
-    private void request(String url) {
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
-        OkHttpClient httpClient = builder.build();
-
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .build();
-
-        Call call = httpClient.newCall(request);
-        call.enqueue(new Callback() {
+        helper.request(new RequestHelper.ResponseListener() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e(TAG, "e = " + e);
-            }
+            public void onBack(String back) {
+                Log.e(TAG, "response = " + back);
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String date = response.body().string();
-                JSONObject json = JSONObject.parseObject(date);
+                JSONObject json = JSONObject.parseObject(back);
 
-                Log.e(TAG, "response = " + date);
                 if (json.getString("code").equals("000000")) {
                     runOnUiThread(new Runnable() {
                         @Override

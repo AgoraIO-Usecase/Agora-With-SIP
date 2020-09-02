@@ -26,13 +26,13 @@ import okhttp3.Response;
 
 public class CallSipActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     private EditText etRoomId;
     private EditText etCaller;
     private EditText etPhone;
     private EditText etGw;
     private ImageView ivRefresh;
-    private Button btnCallOut;
+    private Button btnAudioCall;
+    private Button btnVideoCall;
     private TextView tvStatus;
 
     private CallDataBean callDataBean;
@@ -47,11 +47,13 @@ public class CallSipActivity extends AppCompatActivity implements View.OnClickLi
         etPhone = findViewById(R.id.et_phone);
         etGw = findViewById(R.id.et_gw);
         ivRefresh = findViewById(R.id.iv_refresh);
-        btnCallOut = findViewById(R.id.btn_call_out);
+        btnAudioCall = findViewById(R.id.btn_audio_call);
+        btnVideoCall = findViewById(R.id.btn_video_call);
         tvStatus = findViewById(R.id.tv_status);
 
         ivRefresh.setOnClickListener(this);
-        btnCallOut.setOnClickListener(this);
+        btnAudioCall.setOnClickListener(this);
+        btnVideoCall.setOnClickListener(this);
     }
 
     @Override
@@ -60,8 +62,11 @@ public class CallSipActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.iv_refresh:
                 randomRoomId();
                 break;
-            case R.id.btn_call_out:
-                callPhoneOut();
+            case R.id.btn_audio_call:
+                callPhoneOut(false);
+                break;
+            case R.id.btn_video_call:
+                callPhoneOut(true);
                 break;
         }
     }
@@ -71,16 +76,55 @@ public class CallSipActivity extends AppCompatActivity implements View.OnClickLi
         etRoomId.setText(roomId);
     }
 
-    private void callPhoneOut() {
+    private void callPhoneOut(boolean video) {
         String roomId = etRoomId.getText().toString();
-        String caller = etCaller.getText().toString();
-        String phone = etPhone.getText().toString();
-        String gw = etGw.getText().toString();
 
         if (TextUtils.isEmpty(roomId)) {
             Toast.makeText(this, "Room id 是空的", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        requestCallInfo(roomId, video);
+    }
+
+    private void requestCallInfo(final String roomId, final boolean video) {
+        final String url = Constants.requestCallInfoUrl + "?roomid=" + roomId;
+
+        RequestHelper reqCallInfo = new RequestHelper(url);
+
+        reqCallInfo.request(new RequestHelper.ResponseListener() {
+            @Override
+            public void onBack(String back) {
+                Log.e("PWDebug", "requestCallInfo back = " + back);
+                try {
+                    JSONObject json = JSONObject.parseObject(back);
+                    String errcode = json.getString("errcode");
+
+                    if (!TextUtils.isEmpty(errcode) && errcode.equals("0")) {
+                        final String uid = json.getString("uid");
+                        final String roomID = json.getString("roomID");
+                        final String token = json.getString("token");
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                requestCall(roomID, token, uid, video);
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    Log.e("PWDebug", "reqCallInfo err = " + e.getMessage());
+                }
+            }
+        });
+    }
+
+    private void requestCall(String roomId, String token, String uid, boolean video) {
+        tvStatus.setText("Call...");
+
+        String caller = etCaller.getText().toString();
+        String phone = etPhone.getText().toString();
+        String gw = etGw.getText().toString();
 
         if (TextUtils.isEmpty(caller)) {
             Toast.makeText(this, "Caller 是空的", Toast.LENGTH_SHORT).show();
@@ -100,50 +144,41 @@ public class CallSipActivity extends AppCompatActivity implements View.OnClickLi
         String url = Constants.requestSipCallUrl + "?caller=" + caller + "&room_id=" + roomId +
                 "&phone=" + phone + "&gw=" + gw;
 
+        if (video)
+            url = url + "&callType=VIDEO";
+
         callDataBean = new CallDataBean();
         callDataBean.setRoomId(roomId);
         callDataBean.setCaller(caller);
         callDataBean.setPhone(phone);
         callDataBean.setGw(gw);
+        callDataBean.setToken(token);
+        callDataBean.setUid(uid);
+        callDataBean.setVideo(video);
 
-        request(url);
-    }
+        Log.e("PWDebug", "url = " + url);
 
-    private void request(String url) {
-        tvStatus.setText("Call...");
+        RequestHelper helper = new RequestHelper(url);
 
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
-        OkHttpClient httpClient = builder.build();
-
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .build();
-
-        Call call = httpClient.newCall(request);
-        call.enqueue(new Callback() {
+        helper.request(new RequestHelper.ResponseListener() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("PWDebug", "e = " + e);
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String date = response.body().string();
-                JSONObject json = JSONObject.parseObject(date);
-
-                if (json.getString("code").equals("000000")) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            tvStatus.setText("");
-                            Toast.makeText(CallSipActivity.this, "加入房间", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(CallSipActivity.this, ConverseActivity.class);
-                            intent.putExtra(ConverseActivity.KEY_INTENT_CALL_DATA, callDataBean);
-                            startActivity(intent);
-                        }
-                    });
+            public void onBack(String back) {
+                try {
+                    JSONObject json = JSONObject.parseObject(back);
+                    if (json.getString("code").equals("000000")) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                tvStatus.setText("");
+                                Toast.makeText(CallSipActivity.this, "加入房间", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(CallSipActivity.this, ConverseActivity.class);
+                                intent.putExtra(ConverseActivity.KEY_INTENT_CALL_DATA, callDataBean);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    Log.e("PWDebug", "requestCall err = " + e.getMessage());
                 }
             }
         });

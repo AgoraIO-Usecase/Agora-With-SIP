@@ -8,6 +8,8 @@ public class CallDataBean implements Serializable {
     private String caller;
     private String phone;
     private String gw;
+    private String token;
+    private String uid;
     private boolean video;
 
     public String getRoomId() {
@@ -40,6 +42,22 @@ public class CallDataBean implements Serializable {
 
     public void setGw(String gw) {
         this.gw = gw;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public boolean isVideo() {

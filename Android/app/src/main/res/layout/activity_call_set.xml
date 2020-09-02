@@ -25,6 +25,14 @@
         style="@style/MyExitTextStyle" />
 
     <TextView
+        style="@style/MyTitleStyle"
+        android:text="Agora app id" />
+
+    <EditText
+        android:id="@+id/et_agora_appid"
+        style="@style/MyExitTextStyle" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

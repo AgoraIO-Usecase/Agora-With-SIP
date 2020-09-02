@@ -59,12 +59,12 @@
         style="@style/MyExitTextStyle" />
 
     <TextView
-        android:textSize="14sp"
-        android:textColor="#333333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="If you need a test account, please contact us."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="#333333"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/tv_status"
@@ -81,15 +81,40 @@
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btn_call_out"
-        android:layout_width="240dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/bg_btn"
-        android:text="Audio call"
-        android:textColor="#ffffff"
-        android:textSize="16sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_audio_call"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn"
+            android:text="Audio call"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <!--        <Space-->
+        <!--            android:layout_width="24dp"-->
+        <!--            android:layout_height="wrap_content" />-->
+
+        <Button
+            android:id="@+id/btn_video_call"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn"
+            android:text="video call"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
 </LinearLayout>
