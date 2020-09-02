@@ -22,7 +22,6 @@ You are all set. Now connect your Android device and run the project.
 - For integration guide, bugs and problems, please email bd@lighthk.com
 
 
-
 ## License
 
 - The MIT License (MIT)
