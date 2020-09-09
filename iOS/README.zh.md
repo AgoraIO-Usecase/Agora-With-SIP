@@ -27,6 +27,8 @@ pod install
 
 ### 本项目预置了一个测试AppId, 如果需要使用自己的AppId上线，请通过`联系我们`里的邮箱与我们取得联系。
 
+## SIP RESTful API接入文档
+http://rtc2sip.cn/doc.html
 
 ## 联系我们
 
