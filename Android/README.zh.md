@@ -16,6 +16,9 @@
 
 ### 本项目预置了一个测试AppId, 如果需要使用自己的AppId上线，请通过`联系我们`里的邮箱与我们取得联系。
 
+## SIP RESTful API文档
+http://rtc2sip.cn/doc.html
+
 ## 联系我们
 
 - 售后技术支持与Bug报告，可与我们进行联系：bd@lighthk.com
