@@ -27,6 +27,9 @@ You are all set. Now connect your iPhone or iPad device and run the project.
 
 ### A testing appid has been included in this sample, if you would like your own one to go production, please checkout `Contact Us` section.
 
+## Documentation for SIP RESTful APIs
+http://rtc2sip.cn/doc.html
+
 ## Contact Us
 
 - For integration guide, bugs and problems, please email bd@lighthk.com
